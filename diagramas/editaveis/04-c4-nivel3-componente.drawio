@@ -1,0 +1,61 @@
+<mxfile host="app.diagrams.net" agent="Claude">
+  <diagram name="C4 Nivel 3 - Componente" id="c4nivel3">
+    <mxGraphModel dx="2150" dy="1078" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1300" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;fontSize=20;fontStyle=1;align=left;verticalAlign=middle;" value="Diagrama de Componente — Motor de Score e Risco (C4 Nível 3)" vertex="1">
+          <mxGeometry height="30" width="800" x="40" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="caller" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1168BD;fontColor=#ffffff;strokeColor=#0B4884;arcSize=15;" value="Serviço de Antecipação&#xa;[Container]" vertex="1">
+          <mxGeometry height="70" width="240" x="500" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="boundary" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fontStyle=1;fillColor=none;strokeColor=#666666;dashed=1;" value="Motor de Score e Risco [Fronteira do Container]" vertex="1">
+          <mxGeometry height="480" width="1000" x="120" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="c1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#85BBF0;fontColor=#000000;strokeColor=#1168BD;arcSize=15;" value="Controller de Score&#xa;[Componente: REST Controller]&#xa;Recebe a solicitação de avaliação vinda do Serviço de Antecipação." vertex="1">
+          <mxGeometry height="90" width="240" x="440" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="c2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#85BBF0;fontColor=#000000;strokeColor=#1168BD;arcSize=15;" value="Motor de Regras de Risco&#xa;[Componente: Rules Engine]&#xa;Aplica as políticas de risco por segmento de prestador." vertex="1">
+          <mxGeometry height="90" width="240" x="440" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="c3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#85BBF0;fontColor=#000000;strokeColor=#1168BD;arcSize=15;" value="Cliente de Bureau de Crédito&#xa;[Componente: HTTP Client]&#xa;Integra com o bureau de crédito externo." vertex="1">
+          <mxGeometry height="90" width="240" x="160" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="c4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#85BBF0;fontColor=#000000;strokeColor=#1168BD;arcSize=15;" value="Serviço de Cálculo de Deságio&#xa;[Componente]&#xa;Define a taxa aplicada com base no risco calculado." vertex="1">
+          <mxGeometry height="90" width="240" x="720" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="c5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#85BBF0;fontColor=#000000;strokeColor=#1168BD;arcSize=15;" value="Repositório de Histórico de Score&#xa;[Componente: Data Access]&#xa;Persiste e consulta o histórico de scores calculados." vertex="1">
+          <mxGeometry height="90" width="240" x="440" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="ext1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#999999;fontColor=#ffffff;strokeColor=#6B6B6B;arcSize=15;" value="Bureau de Crédito&#xa;[Sistema Externo]" vertex="1">
+          <mxGeometry height="70" width="240" x="160" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="db" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#438DD5;fontColor=#ffffff;strokeColor=#2E6295;boundedLbl=1;" value="Base de Dados de Recebíveis&#xa;[Container: PostgreSQL]" vertex="1">
+          <mxGeometry height="80" width="240" x="700" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="caller" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="c1" value="chama&#xa;[gRPC]">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="c1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="c2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="c2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" target="c3" value="solicita dados externos">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="c2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="c4" value="envia resultado do risco">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="c2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="c5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="c3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="ext1" value="[API REST]">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="c5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;exitX=0.7;exitY=1;entryX=0.3;entryY=0;" target="db" value="[SQL]">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
