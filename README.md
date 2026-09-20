@@ -187,7 +187,10 @@ Validação sugerida via [c4model.com/review](https://c4model.com/review/): Real
 
 ## 5. Vídeo de apresentação
 
-Vídeo completo em:
+Vídeo completo
+
+<video src="./apresentacao/FIAP_AntecipaJa.mp4" width="100%" controls></video>
+
 
 ---
 
