@@ -1,9 +1,19 @@
 # AntecipaJá — Antecipação de Recebíveis para Prestadores de Serviço Autônomos
 
 **Disciplina:** IT Architecture Design & Styles — MBA Arquitetura de Soluções, FIAP
+
 **Professor:** Leonardo Pinho
+
 **Tema:** Antecipação de Recebíveis
-**Integrantes:**  Catharina Moral Hermacula RM367112 · Daniele Aguiar Ramalho RM364853 · Erika Regina Brunelli RM369277 · Nauana Kelly Lima Nonato RM367585 · Shirlei Alexandrino dos Anjos RM369103
+
+**Integrantes:**  
+|Aluna|RM|
+|--|--|
+| Catharina Moral Hermacula | RM367112 |
+| Daniele Aguiar Ramalho | RM364853 | 
+| Erika Regina Brunelli | RM369277 |
+| Nauana Kelly Lima Nonato | RM367585| 
+| Shirlei Alexandrino dos Anjos | RM369103|
 
 ---
 
@@ -79,7 +89,7 @@ Uma onda de fraude coordenada (recebíveis falsificados em massa) gera um preju�
 
 ## 2. Arquitetura Freeform (versão inicial)
 
-> Diagrama: [`diagramas/01-arquitetura-freeform.drawio`](diagramas/imagens/01-arquitetura-freeform.jpg)
+> Diagrama ![`diagramas/01-arquitetura-freeform.drawio`](diagramas/imagens/01-arquitetura-freeform.jpg)
 
 ### 2.1 Componentes
 
@@ -140,7 +150,7 @@ Mostra o AntecipaJá e as pessoas/sistemas que interagem com ele, sem detalhe in
 - **Sistema em foco:** AntecipaJá
 - **Sistemas externos:** Plataforma Parceira, Bureau de Crédito, Instituição Financeira Parceira, Sistema de Pagamentos (Pix/PSP)
 
-Arquivo: [`diagramas\imagens\02-c4-nivel1-contexto.jpg`](diagramas\imagens\02-c4-nivel1-contexto.jpg)
+![`diagramas\imagens\02-c4-nivel1-contexto.jpg`](diagramas/imagens/02-c4-nivel1-contexto.jpg)
 
 ### 3.2 Nível 2 — Container
 
@@ -158,7 +168,7 @@ Detalha os containers (aplicações, serviços, bancos de dados) que compõem o 
 - Message Broker (Kafka) — para eventos entre serviços
 - BackOffice Administrativo
 
-Arquivo: [`diagramas/imagens/03-c4-nivel2-container.jpg`](diagramas/imagens/03-c4-nivel2-container.jpg)
+![`diagramas/imagens/03-c4-nivel2-container.jpg`](diagramas/imagens/03-c4-nivel2-container.jpg)
 
 
 ### 3.3 Nível 3 — Componente
@@ -171,7 +181,7 @@ Detalha os componentes internos do **Motor de Score e Risco** (container escolhi
 - Serviço de Cálculo de Deságio (define a taxa)
 - Repositório de Histórico de Score
 
-Arquivo: [`diagramas/imagens/04-c4-nivel3-componente.jpg`](diagramas/imagens/04-c4-nivel3-componente.jpg)
+![`diagramas/imagens/04-c4-nivel3-componente.jpg`](diagramas/imagens/04-c4-nivel3-componente.jpg)
 
 ### 3.4 Nível 4 — Código (opcional)
 
@@ -181,7 +191,7 @@ Não desenvolvido nesta entrega — nível opcional conforme orientação da dis
 
 ## 4. Checklist de validação C4
 
-Validação sugerida via [c4model.com/review](https://c4model.com/review/): Realizado
+Validação sugerida via [c4model.com](https://c4model.com): Realizado
 
 ---
 
