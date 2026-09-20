@@ -197,7 +197,7 @@ Validação sugerida via [c4model.com](https://c4model.com): Realizado
 
 ## 5. Vídeo de apresentação
 
-[Assistir ao Vídeo de Apresentação](https://youtu.be/DJ6eaHvOsKo)
+[![Assistir ao Vídeo de Apresentação](https://img.youtube.com/vi/DJ6eaHvOsKo/maxresdefault.jpg)](https://youtu.be/DJ6eaHvOsKo)
 
 
 ---
